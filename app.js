@@ -173,6 +173,7 @@ function productstHandler(e) {
         orders.splice(index, 1)
         localStorage.setItem('orders', JSON.stringify(orders))
         e.target.parentElement.parentElement.remove()
+        ordersBtn.click()
     }
 }
 
@@ -238,9 +239,6 @@ function modalHandler(e) {
             const date = new Date().toLocaleString()
             const orderTable = createOrderTable(date)
             productsDiv.appendChild(orderTable)
-
-            
-
 
             modal.close()
             modal.removeEventListener('click', modalHandler)
